@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>後台-球員頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/players.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    
+    <!--api-->
+    <link rel="stylesheet" href="css/api_bootstrap-3.3.2.min.css" type="text/css"/>
+    <script type="text/javascript" src="js/bootstrap-3.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/api_bootstrap-multiselect.css" type="text/css"/>
+</head>
+
+
+<body>
+<div class="play"><!--ALLdiv-->
+   <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <img  src="img/F.png" width="60px">
+      </div>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="">FindTeam</a></li>
+          <li><a href="Players.html">賽程查詢</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+    
+    
+<div class="container"><!--ALL-div-->
+<!--我的球隊圖片-->
+
+<div class="myTeamArea">
+    <img src="img/B.png" alt="logo" style="width:200px" ><br>
+    <div class="changeButton"><input type="file" title="更換球隊logo" class="changButton"></button><br></div>
+    <br>隊名：兄弟象隊
+    <br>FB網址:https:/zh-tw.facebook.com/Brotherelephants
+    <br>E-mail:brother@gmial.com"
+  </div>
+
+<!--頁籤-->
+<nav class="navbar navbar-default" style="background-color: #d4e7f4;">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#listbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+  </div>
+      
+<div class="collapse navbar-collapse" id="listbar">
+    <ul class="nav navbar-nav">
+        <li><a href="https://ball-weizi.c9users.io/backend_team.html" >編輯球隊資料</a></li>
+        <li class="active"><a lass="nav-link" href="https://ball-weizi.c9users.io/backend_players.html">編輯球員資料</a></li>
+        <li><a lass="nav-link" href="">賽程查詢/預排</a></li>
+        <li><a lass="nav-link" href="">紀錄查詢/修改</a></li>
+        <li><a lass="nav-link" href="">Preview</a></li>
+    </ul>
+</div>
+</nav>
+
+
+<!--內容-->
+<form>
+  <div id="table" class="pre-scrollable"><!--TABLEdiv-->
+    <table class="table">
+      <tr>
+        <th>背號#:</th>
+        <th>姓名:</th>
+        <th>照片:</th>
+        <th>守備位置:</th>
+        <th>投:</th>
+        <th>打:</th>
+        <th>身高:</th>
+        <th>體重:</th>
+        <th>生日:</th>
+        <th></th>
+      </tr>
+      
+        <tr id="table" class="d">
+        <td contenteditable="true"><input type="text" size="3"/></td><!--背號-->
+        <td contenteditable="true"><input type="text" size="9"/></td><!--姓名-->
+        <td contenteditable="true"><input title="球員照片上傳" type="File" size="3"/></td><!--照片-->
+        <td contenteditable="true"><!--守備位置-->
+          <input type="checkbox" name="11" value="1"/>投手
+          <input type="checkbox" name="22" value="2"/>捕手<br>
+          <input type="checkbox" name="33" value="3"/>一壘手
+          <input type="checkbox" name="44" value="4"/>二壘手
+          <input type="checkbox" name="55" value="5"/>三壘手
+          <input type="checkbox" name="66" value="6"/>游擊手<br>
+          <input type="checkbox" name="77" value="7"/>右外野
+          <input type="checkbox" name="88" value="8"/>中外野
+          <input type="checkbox" name="99" value="9"/>左外野
+        </td>
+        
+        <td contenteditable="true"><!--投-->
+          <input type="checkbox" name="11" value="1"/>R<br>
+          <input type="checkbox" name="22" value="2"/>L<br>
+          <input type="checkbox" name="33" value="3"/>R/L
+        </td>
+        
+         <td contenteditable="true"><!--打-->
+           <input type="checkbox" name="11" value="1"/>R<br>
+           <input type="checkbox" name="22" value="2"/>L<br>
+           <input type="checkbox" name="33" value="3"/>R/L
+        </td>
+        
+        <td contenteditable="true"><input type="text" size="9"/></td><!--身高-->
+        <td contenteditable="true"><input type="text" size="9"/></td><!--體重-->
+        <td contenteditable="true"><input type="text"/></td><!--生日-->
+        
+        <td>
+          <span class="table-remove glyphicon glyphicon-remove"></span>
+        </td>
+        
+      </tr>
+        <tr class="hide">
+        <td contenteditable="true"><input type="text" size="3"/></td><!--背號-->
+        <td contenteditable="true"><input type="text" size="9"/></td><!--姓名-->
+        <td contenteditable="true"><input title="球員照片上傳" type="File" size="3"/></td><!--照片-->
+        <td contenteditable="true"><!--守備位置-->
+          <input type="checkbox" name="11" value="1"/>投手
+          <input type="checkbox" name="22" value="2"/>補手<br>
+          <input type="checkbox" name="33" value="3"/>一壘手
+          <input type="checkbox" name="44" value="4"/>二壘手
+          <input type="checkbox" name="55" value="5"/>三壘手
+          <input type="checkbox" name="66" value="6"/>游擊手<br>
+          <input type="checkbox" name="77" value="7"/>右外野<
+          <input type="checkbox" name="88" value="8"/>中外野
+          <input type="checkbox" name="99" value="9"/>左外野
+        </td>
+        
+        <td contenteditable="true"><!--投-->
+          <input type="checkbox" name="11" value="1"/>R<br>
+           <input type="checkbox" name="22" value="2"/>L<br>
+           <input type="checkbox" name="33" value="3"/>R/L
+        </td>
+        
+         <td contenteditable="true"><!--打-->
+           <input type="checkbox" name="11" value="1"/>R<br>
+           <input type="checkbox" name="22" value="2"/>L<br>
+           <input type="checkbox" name="33" value="3"/>R/L
+        </td>
+        
+        <td contenteditable="true"><input type="text" size="9"/></td><!--身高-->
+        <td contenteditable="true"><input type="text" size="9"/></td><!--體重-->
+        <td contenteditable="true"><input type="text"/></td><!--生日-->
+        
+        <td>
+          <span class="table-remove glyphicon glyphicon-remove"></span>
+        </td>
+        
+      </tr>
+    </table>
+     增加球員<span class="table-add glyphicon glyphicon-plus"></span><br><br>
+
+  </div><!--TABLEdiv-->
+  
+</form>
+
+
+<button id="getJSON-btn">送出</button>
+<p id="getJSON"></p>
+  
+</div><!--內容-->
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</div><!--ALL-div-->
+
+<script>
+
+var $TABLE = $('#table');
+var $BTN = $('#getJSON-btn');
+var $EXPORT = $('#getJSON');
+
+$('.table-add').click(function () {
+  var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
+  // $("#select").find(":selected").remove();
+  $TABLE.find('table').append($clone);
+});
+
+
+$('.table-remove').click(function () {
+  $(this).parents('tr').detach();
+});
+
+
+jQuery.fn.pop = [].pop;
+jQuery.fn.shift = [].shift;
+
+$BTN.click(function () {
+  var $rows = $TABLE.find('tr:not(:hidden)');
+  var headers = [];
+  var data = [];
+  
+  $($rows.shift()).find('th:not(:empty)').each(function () {
+    headers.push($(this).text().toLowerCase());
+  });
+  
+  $rows.each(function () {
+    var $td = $(this).find('td');
+    var h = {};
+    
+    headers.forEach(function (header, i) {
+      h[header] = $td.eq(i).text();   
+    });
+    
+    data.push(h);
+  });
+  
+  $EXPORT.text(JSON.stringify(data));
+});
+
+</script>
+
+<!--checkboxAPI-->
+<script type="text/javascript">
+  $('#example-getting-started0').multiselect({
+    buttonWidth: '150px',
+    dropRight: true
+  });
+    
+  $('#example-multiple-selected1').multiselect();
+  $('#example-getting-started2').multiselect();
+  
+
+//上傳按鈕API
+/*
+Bootstrap - File Input
+======================
+This is meant to convert all file input tags into a set of elements that displays consistently in all browsers.
+Converts all
+<input type="file">
+into Bootstrap buttons
+<a class="btn">Browse</a>
+*/
+
+(function($) {
+$.fn.bootstrapFileInput = function() {
+  this.each(function(i,elem){
+    var $elem = $(elem);
+
+    // Maybe some fields don't need to be standardized.
+    if (typeof $elem.attr('data-bfi-disabled') != 'undefined') {
+      return;
+    }
+
+    // Set the word to be displayed on the button
+    var buttonWord = 'Browse';
+
+    if (typeof $elem.attr('title') != 'undefined') {
+      buttonWord = $elem.attr('title');
+    }
+
+    var className = '';
+
+    if (!!$elem.attr('class')) {
+      className = ' ' + $elem.attr('class');
+    }
+
+    // Now we're going to wrap that input field with a Bootstrap button.
+    // The input will actually still be there, it will just be float above and transparent (done with the CSS).
+    $elem.wrap('<a class="file-input-wrapper btn btn-default ' + className + '"></a>').parent().prepend($('<span></span>').html(buttonWord));
+  })
+
+  // After we have found all of the file inputs let's apply a listener for tracking the mouse movement.
+  // This is important because the in order to give the illusion that this is a button in FF we actually need to move the button from the file input under the cursor. Ugh.
+  .promise().done( function(){
+
+    // As the cursor moves over our new Bootstrap button we need to adjust the position of the invisible file input Browse button to be under the cursor.
+    // This gives us the pointer cursor that FF denies us
+    $('.file-input-wrapper').mousemove(function(cursor) {
+      var input, wrapper,
+        wrapperX, wrapperY,
+        inputWidth, inputHeight,
+        cursorX, cursorY;
+
+      // This wrapper element (the button surround this file input)
+      wrapper = $(this);
+      // The invisible file input element
+      input = wrapper.find("input");
+      // The left-most position of the wrapper
+      wrapperX = wrapper.offset().left;
+      // The top-most position of the wrapper
+      wrapperY = wrapper.offset().top;
+      // The with of the browsers input field
+      inputWidth= input.width();
+      // The height of the browsers input field
+      inputHeight= input.height();
+      //The position of the cursor in the wrapper
+      cursorX = cursor.pageX;
+      cursorY = cursor.pageY;
+
+      //The positions we are to move the invisible file input
+      // The 20 at the end is an arbitrary number of pixels that we can shift the input such that cursor is not pointing at the end of the Browse button but somewhere nearer the middle
+      moveInputX = cursorX - wrapperX - inputWidth + 20;
+      // Slides the invisible input Browse button to be positioned middle under the cursor
+      moveInputY = cursorY- wrapperY - (inputHeight/2);
+
+      // Apply the positioning styles to actually move the invisible file input
+      input.css({
+        left:moveInputX,
+        top:moveInputY
+      });
+    });
+
+    $('body').on('change', '.file-input-wrapper input[type=file]', function(){
+
+      var fileName;
+      fileName = $(this).val();
+
+      // Remove any previous file names
+      $(this).parent().next('.file-input-name').remove();
+      if (!!$(this).prop('files') && $(this).prop('files').length > 1) {
+        fileName = $(this)[0].files.length+' files';
+      }
+      else {
+        fileName = fileName.substring(fileName.lastIndexOf('\\') + 1, fileName.length);
+      }
+
+      // Don't try to show the name if there is none
+      if (!fileName) {
+        return;
+      }
+
+      var selectedFileNamePlacement = $(this).data('filename-placement');
+      if (selectedFileNamePlacement === 'inside') {
+        // Print the fileName inside
+        $(this).siblings('span').html(fileName);
+        $(this).attr('title', fileName);
+      } else {
+        // Print the fileName aside (right after the the button)
+        $(this).parent().after('<span class="file-input-name">'+fileName+'</span>');
+      }
+    });
+
+  });
+
+};
+
+// Add the styles before the first stylesheet
+// This ensures they can be easily overridden with developer styles
+var cssHtml = '<style>'+
+  '.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }'+
+  '.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }'+
+  '.file-input-name { margin-left: 8px; }'+
+  '</style>';
+$('link[rel=stylesheet]').eq(0).before(cssHtml);
+
+})(jQuery);
+
+$('input[type=file]').bootstrapFileInput();
+$('.file-inputs').bootstrapFileInput();
+
+</script>
+
+</body>
+</html>

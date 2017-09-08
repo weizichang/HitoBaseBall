@@ -1,0 +1,146 @@
+/* 列出球員的格子 */
+#table{
+	border: 30px;
+}
+
+/* 列出球員的格子- */
+th { 
+    text-align: center;
+    padding: 8px;
+    background-color: #8FBAF3;
+    color: white;
+}
+
+/* 列出球員的格子 */
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+
+/* 列出背號的格子 */
+.inputA{
+  text-align: center;
+  border-radius:8px;
+  width: 50px;
+}
+
+
+/* 列出姓名的格子 */
+.inputB{
+  text-align: center;
+  border-radius:8px;
+  width: 100px;
+  margin: 5px;
+}
+
+
+/* 列出守備位置的格子 */
+.inputC{
+  text-align: left;
+  border-radius:8px;
+  width: 400px;
+  margin: 5px;
+}
+
+
+/* 列出的打擊的格子 */
+.inputD{
+  text-align: center;
+  border-radius:8px;
+  width: 80px;
+  margin: 5px;
+}
+
+
+/* 列出投球的格子 */
+.inputE{
+  text-align: center;
+  border-radius:8px;
+  width: 80px;
+  margin: 5px;
+}
+
+
+/* 列出身高的格子 */
+.inputF{
+  text-align: center;
+  border-radius:8px;
+  width: 80px;
+  margin: 5px;
+}
+
+
+/* 列出體重的格子 */
+.inputG{
+  text-align: center;
+  border-radius:8px;
+  width: 80px;
+  margin: 5px;
+}
+
+
+/* 列出生日的格子 */
+.inputH{
+  text-align: center;
+  border-radius:8px;
+  width: 100px;
+  margin: 5px;
+}
+
+
+.photo_td{
+/*   text-align: center; */
+/*   border-radius:8px; */
+  width: 100px;
+  margin: 5px;
+}
+
+
+/* 儲存變更按鈕的Class */
+div.scbutton{
+   padding-top: 10px;
+}
+
+
+/* 儲存變更按鈕本身 */
+.saveButton{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: #238c21;
+  border-radius:8px;
+}
+
+
+/* 刪除球員的按鈕 */
+.deleteButton{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: red;
+  border-radius:8px;
+  width: 100%;
+}
+
+
+/* 儲存新增的按鈕 */
+.addbutton{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: #238c21;
+  border-radius:8px;
+  margin-left: 13px;
+}
+
+
+/* 多筆新增的按鈕 */
+.addsection{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: #203562;
+  border-radius:8px;
+}
+

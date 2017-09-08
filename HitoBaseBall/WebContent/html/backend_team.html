@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>後台-球隊頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/backend.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+   <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <img  src="img/F.png" width="60px">
+      </div>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="">FindTeam</a></li>
+          <li><a href="Players.html">賽程查詢</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+    
+    
+<div class="container"><!--ALL-div-->
+<!--我的球隊圖片-->
+
+  <div class="myTeamArea">
+    <input type="file" id="myFile" title="上傳球隊logo" data-filename-placement="inside">
+        <input type="file" id="myFile" title="上傳照片" data-filename-placement="inside">
+        <input type="file" id="myFile" title="上傳照片" data-filename-placement="inside">
+        <input type="file" id="myFile" title="上傳照片" data-filename-placement="inside">
+  </div>
+
+<!--頁籤-->
+<nav class="navbar navbar-default" style="background-color: #d4e7f4;">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#listbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+  </div>
+      
+<div class="collapse navbar-collapse" id="listbar">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="https://ball-weizi.c9users.io/back_team.html" >編輯球隊資料</a></li>
+        <li><a lass="nav-link" href="https://ball-weizi.c9users.io/backend_players.html">編輯球員資料</a></li>
+        <li><a lass="nav-link" href="">賽程查詢/預排</a></li>
+        <li><a lass="nav-link" href="">紀錄查詢/修改</a></li>
+        <li><a lass="nav-link" href="">Preview</a></li>
+    </ul>
+</div>
+</nav>
+
+
+<!--內容-->
+<div id="team">
+  <table id="miyazaki">
+    <tr id="tablenone">
+      <th>球隊名稱</th>
+      <th>FB網址</th></th>
+      <th>E-mail</th>
+    </tr>
+  
+    <tr>
+      <td><!--球隊名稱-->
+      <input name="content" type="text" class="inputA" value="兄弟象隊"/>
+      </td>
+        
+      <td><!--FB網址-->
+      <input name="name" type="text" class="inputB" value="https://zh-tw.facebook.com/Brotherelephants/"/>
+      </td>
+        
+      <td><!--聯絡E-mail-->
+      <input name="name" type="text" class="inputB" value="brother@gmial.com"/>
+      </td>
+    </tr>
+      
+  </table>
+    
+  <div class="scbutton">
+    <button onclick="save()" class="saveButton">儲存</button>
+    <button onclick="cancel()" class="cancelButton">取消</button>
+  </div>
+</div><!--內容-->
+
+
+<hr>  
+<!--活動照片-->
+<div class="teamImg">
+  <P>
+    <img src="img/baseball.png" width="80px">球隊活動照片
+    <input type="file" title="上傳活動照片"></button>
+  </p>
+</div>
+
+
+<div class="teamImgArea">
+
+  <div class="responsive" >
+    <div class="gallery" >
+        <div class="image-container"><img src="img/D.jpg"></div>
+        <button class="imgDelete">刪除</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <div class="image-container"><img src="img/phC.jpg" alt="Forest"></div>
+        <button class="imgDelete">刪除</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <div class="image-container"><img src="img/phA.jpg" alt="Northern Lights"></div>
+        <button class="imgDelete">刪除</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <div class="image-container"><img src="img/phB.jpg" alt="Mountains"></div>
+        <button class="imgDelete">刪除</button>
+    </div>
+  </div>
+</div>
+</div><!--ALL-div-->
+
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+</body>
+
+<script>
+
+//上傳按鈕API
+/*
+Bootstrap - File Input
+======================
+This is meant to convert all file input tags into a set of elements that displays consistently in all browsers.
+Converts all
+<input type="file">
+into Bootstrap buttons
+<a class="btn">Browse</a>
+*/
+
+(function($) {
+$.fn.bootstrapFileInput = function() {
+  this.each(function(i,elem){
+    var $elem = $(elem);
+
+    // Maybe some fields don't need to be standardized.
+    if (typeof $elem.attr('data-bfi-disabled') != 'undefined') {
+      return;
+    }
+
+    // Set the word to be displayed on the button
+    var buttonWord = 'Browse';
+
+    if (typeof $elem.attr('title') != 'undefined') {
+      buttonWord = $elem.attr('title');
+    }
+
+    var className = '';
+
+    if (!!$elem.attr('class')) {
+      className = ' ' + $elem.attr('class');
+    }
+
+    // Now we're going to wrap that input field with a Bootstrap button.
+    // The input will actually still be there, it will just be float above and transparent (done with the CSS).
+    $elem.wrap('<a class="file-input-wrapper btn btn-default ' + className + '"></a>').parent().prepend($('<span></span>').html(buttonWord));
+  })
+
+  // After we have found all of the file inputs let's apply a listener for tracking the mouse movement.
+  // This is important because the in order to give the illusion that this is a button in FF we actually need to move the button from the file input under the cursor. Ugh.
+  .promise().done( function(){
+
+    // As the cursor moves over our new Bootstrap button we need to adjust the position of the invisible file input Browse button to be under the cursor.
+    // This gives us the pointer cursor that FF denies us
+    $('.file-input-wrapper').mousemove(function(cursor) {
+      var input, wrapper,
+        wrapperX, wrapperY,
+        inputWidth, inputHeight,
+        cursorX, cursorY;
+
+      // This wrapper element (the button surround this file input)
+      wrapper = $(this);
+      // The invisible file input element
+      input = wrapper.find("input");
+      // The left-most position of the wrapper
+      wrapperX = wrapper.offset().left;
+      // The top-most position of the wrapper
+      wrapperY = wrapper.offset().top;
+      // The with of the browsers input field
+      inputWidth= input.width();
+      // The height of the browsers input field
+      inputHeight= input.height();
+      //The position of the cursor in the wrapper
+      cursorX = cursor.pageX;
+      cursorY = cursor.pageY;
+
+      //The positions we are to move the invisible file input
+      // The 20 at the end is an arbitrary number of pixels that we can shift the input such that cursor is not pointing at the end of the Browse button but somewhere nearer the middle
+      moveInputX = cursorX - wrapperX - inputWidth + 20;
+      // Slides the invisible input Browse button to be positioned middle under the cursor
+      moveInputY = cursorY- wrapperY - (inputHeight/2);
+
+      // Apply the positioning styles to actually move the invisible file input
+      input.css({
+        left:moveInputX,
+        top:moveInputY
+      });
+    });
+
+    $('body').on('change', '.file-input-wrapper input[type=file]', function(){
+
+      var fileName;
+      fileName = $(this).val();
+
+      // Remove any previous file names
+      $(this).parent().next('.file-input-name').remove();
+      if (!!$(this).prop('files') && $(this).prop('files').length > 1) {
+        fileName = $(this)[0].files.length+' files';
+      }
+      else {
+        fileName = fileName.substring(fileName.lastIndexOf('\\') + 1, fileName.length);
+      }
+
+      // Don't try to show the name if there is none
+      if (!fileName) {
+        return;
+      }
+
+      var selectedFileNamePlacement = $(this).data('filename-placement');
+      if (selectedFileNamePlacement === 'inside') {
+        // Print the fileName inside
+        $(this).siblings('span').html(fileName);
+        $(this).attr('title', fileName);
+      } else {
+        // Print the fileName aside (right after the the button)
+        $(this).parent().after('<span class="file-input-name">'+fileName+'</span>');
+      }
+    });
+
+  });
+
+};
+
+// Add the styles before the first stylesheet
+// This ensures they can be easily overridden with developer styles
+var cssHtml = '<style>'+
+  '.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }'+
+  '.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }'+
+  '.file-input-name { margin-left: 8px; }'+
+  '</style>';
+$('link[rel=stylesheet]').eq(0).before(cssHtml);
+
+})(jQuery);
+
+$('input[type=file]').bootstrapFileInput();
+$('.file-inputs').bootstrapFileInput();
+
+</script>
+</html>

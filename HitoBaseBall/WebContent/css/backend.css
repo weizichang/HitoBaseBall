@@ -1,0 +1,272 @@
+/*.myimg {*/
+/*    position: Relative;*/
+/*    left: 0px;*/
+/*    top: 1px;*/
+/*    width: 200px;*/
+/*    height: 170px;*/
+/*}*/
+
+
+.addButton {
+    width: 200px;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: green;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+
+/*addButton動畫*/
+@-webkit-keyframes example {
+    from {background-color: #203562;}
+    to {background-color:  #f45c04;}
+}
+
+
+/*addButton動畫*/
+@keyframes example {
+    from {background-color: #203562;}
+    to {background-color: #f45c04;}
+}
+
+
+/*#team{*/
+/*    margin-top: 5px;*/
+/*}*/
+
+
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+
+th { 
+    text-align: center;
+    padding: 8px;
+    background-color: #8FBAF3;
+    color: white;
+}
+
+
+tr:nth-child(even){
+  background-color: #f2f2f2
+  
+}
+
+
+.saveButton{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: #238c21;
+  border-radius:5px;
+}
+
+
+.cancelButton{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: #6c6d70;
+  border-radius:5px;
+}
+
+
+.inputA{
+  border-radius:1px;
+  width: 100%;
+}
+
+
+.inputB{
+  border-radius:1px;
+  width: 100%;
+}
+
+.inputC{
+  border-radius:1px;
+  width: 100%;
+}
+
+
+.img {
+    border: 10px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    max-width: 100%;
+}
+
+
+/*RWD*/
+table#miyazaki { 
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-weight: 100; 
+  border-radius: 5px; 
+  width: 100%;
+}
+
+
+table#miyazaki thead th, table#miyazaki tbody td { 
+  padding: .8rem;
+}
+
+
+table#miyazaki tbody td { 
+  padding: .8rem;
+  color: #444444; background: #eeeeee; 
+}
+
+
+@media screen and (max-width: 600px) {
+  table#miyazaki caption { background-image: none; }
+  table#miyazaki thead { display: none; }
+  tr#tablenone{ display: none;}
+  table#miyazaki tbody td {display: block; padding: .6rem;}
+  table#miyazaki tbody tr td:first-child {background: #666; color: #fff;}
+  table#miyazaki tbody td:before { 
+    content: attr(data-th); 
+    font-weight: bold;
+    display: inline-block;
+    width: 6rem;
+  }
+}
+
+@media screen and (max-width: 385px){
+    table#miyazaki{width:100%;}
+}
+
+/*圖片部分*/
+
+
+div.gallery {
+    border: 3px solid #ccc;
+    /*width: 100px;*/
+    /*height: 100px;*/
+  
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+/*div.gallery img {*/
+/*  padding-left: 5px;*/
+/*  padding-top: 5px;*/
+/*  padding-right:5px;*/
+/*  width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
+div.image-container {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right:5px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  /*overflow: hidden;*/
+  overflow: hidden;
+}
+
+div.image-container img {
+  width: 100%;
+}
+
+div.desc {
+    padding: 25px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 6px;
+    float: left;
+    width: 25%;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 50%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.imgDelete{
+  margin-bottom:10px;
+  height: 30px;
+  color: white;
+  background-color: red;
+  border-radius:5px;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+/*div{*/
+/*  padding-bottom: 20px;*/
+/*}*/
+
+div.teamImg{
+  font-family: "微軟正黑體";
+  font-style: oblique;
+  font-size: 40px
+}
+
+div.teamImgArea{
+  padding-bottom: 500px;
+}
+
+div.scbutton{
+   padding-top: 10px;
+}
+
+div.myTeamArea{
+   padding-bottom: 10px;
+}
+
+div.changeButton{
+  padding-left: 50px;
+}
+
+
+div.changephoto{
+  position: inherit;
+  padding-left: 330px;
+  padding-bottom: 500px;
+}
+
+div.myp{
+  padding-left: 60px;
+}
+
+div.teamName{
+	color: red;
+}
